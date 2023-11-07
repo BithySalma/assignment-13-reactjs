@@ -1,12 +1,18 @@
-// src/pages/Home.js
-import React from 'react';
+import ProjectFour from "../components/project/ProjectFour";
+import ProjectOne from "../components/project/ProjectOne";
+import ProjectThree from "../components/project/ProjectThree";
+import ProjectTwo from "../components/project/ProjectTwo";
 
-function Project() {
-  return (
-    <div>
-      <h1>Project Page</h1>
-    </div>
-  );
-}
+const Project = () => {
+    return (
+        <div>
+            <h1>Project Page</h1>
+            <ProjectOne/>
+            <ProjectTwo/>
+            <ProjectThree/>
+            <ProjectFour/>
+        </div>
+    );
+};
 
 export default Project;

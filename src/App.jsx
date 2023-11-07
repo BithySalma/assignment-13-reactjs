@@ -1,47 +1,52 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
+import { useRef,useState,useEffect } from "react";
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from '../src/pages/Home';
-import Service from '../src/pages/Service';
 import About from '../src/pages/About';
-import Project from '../src/pages/Project';
 import Blog from '../src/pages/Blog';
 import Contact from '../src/pages/Contact';
+import Project from '../src/pages/Project';
+import Service from '../src/pages/Service';
+import Menu from '../src/Menu';
 
-function App() {
-  return (
-    <Router>
-      <nav>
-        <NavLink to="/" exact activeClassName="active">
-          Home
-        </NavLink>
-        <NavLink to="/service" activeClassName="active">
-          Service
-        </NavLink>
-        <NavLink to="/about" activeClassName="active">
-          About
-        </NavLink>
-        <NavLink to="/project" activeClassName="active">
-          Project
-        </NavLink>
-        <NavLink to="/blog" activeClassName="active">
-          Blog
-        </NavLink>
-        <NavLink to="/contact" activeClassName="active">
-          Contact
-        </NavLink>
-      </nav>
+const App = () => {
+    const myHeadline = useRef();
+    const change = () => {
+        myHeadline.current.innerText = 'Hello React!'
+    }
 
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/service" component={Service} />
-        <Route path="/about" component={About} />
-        <Route path="/project" component={Project} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/contact" component={Contact} />
-      </Switch>
-    </Router>
-  );
-}
+    const [number,setNumber] = useState(0);
+
+    useEffect(()=>{
+        console.log('Changed!');
+    },[3]);
+
+    return (
+        <div >  
+            
+            <h1 ref={myHeadline}></h1>
+            <button className="btn btn-primary" onClick={change}>Click Me check Use Ref</button> 
+
+
+            <h1>Number : {number}</h1>
+            <button className="btn btn-danger" onClick={()=>setNumber(number+1)}>Increment++</button>
+
+                    { <BrowserRouter>
+                <Menu/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/blog" element={<Blog/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/project" element={<Project/>}/>
+                    <Route path="/service" element={<Service/>}/>
+                    
+                </Routes>
+            </BrowserRouter> }
+            
+
+            
+        </div>
+    );
+};
 
 export default App;
