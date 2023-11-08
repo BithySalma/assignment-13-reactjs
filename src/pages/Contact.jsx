@@ -5,7 +5,7 @@ import ContactTwo from '../components/contact/ContactTwo';
 import ContactOne from './../components/contact/ContactOne';
 const Contact = () => {
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <h1>Contact Page</h1>
             <ContactOne/>
             <ContactTwo/>

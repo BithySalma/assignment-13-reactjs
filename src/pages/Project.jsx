@@ -5,7 +5,7 @@ import ProjectTwo from "../components/project/ProjectTwo";
 
 const Project = () => {
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <h1>Project Page</h1>
             <ProjectOne/>
             <ProjectTwo/>

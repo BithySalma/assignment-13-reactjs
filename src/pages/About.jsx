@@ -4,7 +4,7 @@ import AboutThree from '../components/about/AboutThree';
 import AboutFour from '../components/about/AboutFour';
 const About = () => {
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <h1>About Page</h1>
             <AboutOne/>
             <AboutTwo/>

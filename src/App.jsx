@@ -9,28 +9,32 @@ import Service from '../src/pages/Service';
 import Menu from '../src/Menu';
 
 const App = () => {
-    const myHeadline = useRef();
+    const changeText = useRef();
     const change = () => {
-        myHeadline.current.innerText = 'Hello React!'
+        changeText.current.innerText = 'Hello Everybody I am from useRef,useEffect and useState!'
     }
 
     const [number,setNumber] = useState(0);
 
     useEffect(()=>{
         console.log('Changed!');
-    },[3]);
+    },[5]);
 
     return (
         <div >  
             
-            <h1 ref={myHeadline}></h1>
-            <button className="btn btn-primary" onClick={change}>Click Me check Use Ref</button> 
+            <h1 className="d-flex justify-content-center" ref={changeText}></h1>
+            <button className="btn btn-dark d-grid gap-2 col-6 mx-auto" onClick={change}>Hello I AM FROM useRef</button> 
+            
 
 
-            <h1>Number : {number}</h1>
-            <button className="btn btn-danger" onClick={()=>setNumber(number+1)}>Increment++</button>
 
-                    { <BrowserRouter>
+            <h1 className="d-flex justify-content-center">Number : {number}</h1>
+            <button className="btn btn-success d-grid gap-2 col-6 mx-auto" onClick={()=>setNumber(number+1)}>Click me</button>
+
+
+
+            {  <BrowserRouter>
                 <Menu/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>

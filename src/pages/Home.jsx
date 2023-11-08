@@ -5,7 +5,7 @@ import HomeTwo from "../components/home/HomeTwo";
 
 const Home = () => {
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <h1>Home Page</h1>
             <HomeOne/>
             <HomeTwo/>

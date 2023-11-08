@@ -3,9 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Menu = () => {
     return (
-        <div>
-            <div className="row">
-                <div className="col-md-6">
+
+
+<div className="d-flex justify-content-center">
+            <div className="row gx-5">
+                <div className="col">
                 <h4>Link</h4>
             <ul>
                 <li><Link to="/">Home</Link></li>
@@ -16,7 +18,7 @@ const Menu = () => {
                 <li><Link to="/service">Service</Link></li>
             </ul>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 d-flex justify-content-center">
   
                 <h4>Nav Link</h4>
             <ul>
@@ -32,6 +34,8 @@ const Menu = () => {
           
             <hr />
         </div>
+        
+
     );
 };
 
